@@ -1,5 +1,3 @@
-package POO_Homework.List2;
-
 class Elevador {
     private int andarAtual;
     private int totalAndares;
