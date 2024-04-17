@@ -1,6 +1,4 @@
-package POO_Homework.List3;
-
-class SisMatricula {
+class Aluno {
     private String nome;
     private int matricula;
     private float nota1;
@@ -9,7 +7,7 @@ class SisMatricula {
     private float media;
     private String situacao;
 
-    public SisMatricula(String nome, int matricula, float nota1, float nota2, float nota3, float media, String situacao){
+    public Aluno(String nome, int matricula, float nota1, float nota2, float nota3, float media, String situacao){
         this.nome = nome;
         this.matricula = matricula;
         this.nota1 = nota1;
@@ -34,23 +32,24 @@ class SisMatricula {
         this.nota3 = n3;
     }
 
+
     public void calcularMedia(){
         this.media = (this.nota1 + this.nota2 + this.nota3)/3;
+
+        if(this.media < 3){
+          this.situacao = "reprovado";
+        } else if(this.media >= 7){
+            this.situacao = "aprovado";
+        } else{
+          this.situacao = "em recuperação";
+        }
     }
 
     public boolean buscarAluno(int matricula){
-        
-        /* half-way through
-        if(this.matricula == matricula){
-            System.out.println("Nome: " + this.nome);
-            System.out.println("Nota 1: " + this.nota1);
-            System.out.println("Nota 2: " + this.nota2);
-            System.out.println("Nota 3: " + this.nota3);
-            System.out.println("Média: " + this.media);
-            System.out.println("Situação: " + this.situacao);
+        if (this.matricula == matricula) {
             return true;
-        }
-        */
+        } else
+            return false;
     }
 
     public String getNome() {
@@ -89,9 +88,7 @@ class SisMatricula {
                 this.nota3 = valorNota;
             default:
                 System.out.println("Código incorreto");
-
                 break;
         }
     }
-
 }
