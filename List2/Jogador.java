@@ -1,6 +1,3 @@
-package POO_Homework.List2;
-
-
 class Jogador {
     String name;
     String position;
